@@ -1,0 +1,177 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(180deg, rgb(39,39,182), rgb(20,20,120));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+}
+
+main {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+h1 {
+    color: #ffffffe3;
+    font-size: 2.5em;
+}
+
+p {
+    color: #ffffffa6;
+    margin-top: 8px;
+}
+
+#bottle {
+    position: relative;
+    margin: 40px auto 0 auto;
+    width: 220px;
+    height: 450px;
+    border: solid 3px #0d0d5c;
+    background-color: #ffffff;
+    border-radius: 0 0 50px 50px;
+    overflow: hidden;
+}
+
+#fill {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 0;
+    background: linear-gradient(180deg, #6ab3f8 0%, #0072ff 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: height 0.4s ease;
+    z-index: 1;
+    visibility: hidden;
+}
+
+#fill::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #0d0d5c;
+}
+
+#remaining {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.amount {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+}
+
+.amount h2, .amount p {
+    font-size: 28px;
+    color: #0d0d5c;
+    margin: 0;
+}
+
+.remaining-text {
+    font-size: 14px;
+    color: #0d0d5c;
+    text-transform: uppercase;
+}
+
+#percentage-display {
+    font-weight: bold;
+    font-size: 32px;
+    color: #0d0d5c;
+}
+
+#cuph2 {
+    margin: 20px 0;
+    color: #ffffff;
+    font-size: 1em;
+}
+
+.cup-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    max-width: 280px;
+    margin: 0 auto;
+}
+
+.cup-buttons .cup-btn {
+    width: 60px;
+    height: 100px;
+    border-radius: 0 0 15px 15px;
+    border: solid 2px #0d0d5c;
+    background: #ffffff;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.cup-buttons .cup-btn.activo {
+    background: linear-gradient(180deg, #6ab3f8 0%, #0072ff 100%);
+    color: white;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 20px 0;
+        display: block;
+    }
+
+    main {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    #bottle {
+        width: 180px;
+        height: 380px;
+        margin: 20px auto;
+    }
+
+    #cuph2 {
+        font-size: 0.9rem;
+        margin: 20px auto;
+        max-width: 180px;
+    }
+
+    #fill {
+        font-size: 20px;
+    }
+
+    .cup-buttons {
+        width: 100%;
+        max-width: 160px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .cup-buttons .cup-btn {
+        width: calc(50% - 5px);
+        height: 80px;
+    }
+}
