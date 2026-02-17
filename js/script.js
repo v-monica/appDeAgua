@@ -51,15 +51,17 @@ function updateBottle() {
 
     litersRemaining.textContent = (goal - waterDrank) / 1000;
 
+
     if (percentageValue === 100) {
         remaining.style.visibility = 'hidden';
-        remaining.style.height = '0';
+        remaining.style.height = '0%';
         bottle.style.cursor = 'pointer';
     } else {
         remaining.style.visibility = 'visible';
-        remaining.style.height = 'auto';
+        remaining.style.height = `${100 - percentageValue}%`;
         bottle.style.cursor = 'default';
     }
+
 }
 
 function resetApp() {
